@@ -10,7 +10,28 @@ Asignar núcleos de CPU específicos:
 ```
 
 **¿Como saber el numero de procesadores virtuales que tiene una máquina?**
-## COMPLETAR
+
+# Cómo Saber el Número de Procesadores Virtuales (vCPUs) en Linux
+
+En Linux, puedes utilizar varios comandos para ver el número de procesadores virtuales (vCPUs) que tiene tu máquina:
+
+## 1. Usando `nproc`
+Este comando muestra directamente el número de vCPUs.
+
+`nproc`
+
+## 2. Usando `lscpu`
+Este comando da un resumen detallado de la configuración de la CPU, incluyendo el número total de vCPUs.
+
+`lscpu | grep "^CPU(s):"`
+
+## 3. Usando `/proc/cpuinfo`
+También puedes revisar el archivo `/proc/cpuinfo` para contar el número de vCPUs. Este comando cuenta las líneas que contienen "processor", que representan cada vCPU.
+
+`cat /proc/cpuinfo | grep "^processor" | wc -l`
+
+Cada uno de estos comandos te mostrará el número de **procesadores virtuales (vCPUs)** disponibles en el sistema Linux.
+
 
 ## Ejemplos
 _Puedes copiar y ejecutar directamente cada uno de los comandos_
